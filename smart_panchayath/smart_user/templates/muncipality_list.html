@@ -50,14 +50,14 @@
                     <a href="/home/" class="nav-item nav-link">Home</a>
                     <a href="/about/" class="nav-item nav-link">About</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">PANCHAYATH</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">PANCHAYATH</a>
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a href="/Panchayath_List/" class="dropdown-item">Panchayath List</a>
+                            <a href="/Panchayath_List/" class="dropdown-item active">Panchayath List</a>
                             <a href="/job-detail/" class="dropdown-item">Job Detail</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">MUNICIPALITY</a>
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">MUNICIPALITY</a>
                         <div class="dropdown-menu rounded-0 m-0">
                             <a href="/Muncipality_List/" class="dropdown-item">Muncipality List</a>
                             <a href="/testimonial/" class="dropdown-item">Testimonial</a>
@@ -74,12 +74,12 @@
         <!-- Header End -->
         <div class="container-xxl py-5 bg-dark page-header mb-5">
             <div class="container my-5 pt-5 pb-4">
-                <h1 class="display-3 text-white mb-3 animated slideInDown">Panchayath List</h1>
+                <h1 class="display-3 text-white mb-3 animated slideInDown">Muncipality List</h1>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb text-uppercase">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Panchayath</a></li>
-                        <li class="breadcrumb-item text-white active" aria-current="page">Panchayath List</li>
+                        <li class="breadcrumb-item"><a href="#">Muncipality</a></li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">Muncipality List</li>
                     </ol>
                 </nav>
             </div>
@@ -90,38 +90,38 @@
 <!-- Jobs Start -->
         <div class="container-xxl py-5">
 
-    <div class="container">
-        <h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">Thrissur District</h1>
-        <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
-            <div class="tab-content">
-                <div id="tab-1" class="tab-pane fade show p-0 active">
-                    {% for panchayath in panchayath_details %}
-                    <div class="job-item p-4 mb-4">
-                        <div class="row g-4">
-                            <div class="col-sm-12 col-md-8 d-flex align-items-center">
-                                <img class="flex-shrink-0 img-fluid border rounded" src="{% static 'img/panchayath logo.png' %}" alt="" style="width: 80px; height: 80px;">
-                                <div class="text-start ps-4">
-                                    <h5 class="mb-3">{{ panchayath.p_name }}</h5>
-                                    <span class="text-truncate me-3"><i class="fa fa-map-marker-alt text-primary me-2"></i>Thrissur, Kerala</span>
-                                    <span class="text-truncate me-3">Pin Code: {{ panchayath.pincode }}</span>
+            <div class="container">
+                <h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">Thrissur District</h1>
+                <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="tab-content">
+                        <div id="tab-1" class="tab-pane fade show p-0 active">
+                            {% for muncipality in muncipality_details %}
+                                <div class="job-item p-4 mb-4">
+                                    <div class="row g-4">
+                                        <div class="col-sm-12 col-md-8 d-flex align-items-center">
+                                            <img class="flex-shrink-0 img-fluid border rounded" src="{% static 'img/muncipality.png' %}" alt="" style="width: 80px; height: 80px;">
+                                            <div class="text-start ps-4">
+                                                <h5 class="mb-3">{{ muncipality.m_name }}</h5>
+                                                <span class="text-truncate me-3"><i class="fa fa-map-marker-alt text-primary me-2"></i>Thrissur, Kerala</span>
+                                                <span class="text-truncate me-3">Pin Code: {{ muncipality.pincode }}</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+                                            <div class="d-flex mb-3">
+                                                <a class="btn btn-primary" href="">View More</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
-                                <div class="d-flex mb-3">
-                                    <a class="btn btn-primary" href="">View More</a>
-                                </div>
-                            </div>
+                            {% endfor %}
+
                         </div>
                     </div>
-                    {% endfor %}
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
-                            
-        <!-- Jobs End -->
+<!-- Jobs End -->
 
 
         <!-- Footer Start -->
