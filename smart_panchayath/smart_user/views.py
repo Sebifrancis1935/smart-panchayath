@@ -1,10 +1,9 @@
 from django.shortcuts import render
 
 # Create your views here.
+from .models import Panchayath_details
 from django.shortcuts import render, redirect
 from . forms import UserForm, LoginForm, P_loginForm
-
-# Create your views here.
 
 
 def User_Registration(request):
@@ -86,6 +85,11 @@ def Corporation_Login(request):
 
 def Index(request):
     return render(request, 'index.html')
+
+
+def Panchayath_list(request):
+    panchayath_details = Panchayath_details.objects.all()
+    return render(request, 'panchayath_list.html', {'panchayath_details': panchayath_details})
 
 
 def About(request):

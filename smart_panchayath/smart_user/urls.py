@@ -16,7 +16,8 @@ urlpatterns = [
     path('panchayath_login/', views.Panchayath_Login, name='Panchayath_Login'),
     path('category/', views.category, name='category'),
     path('error/', views.error, name='error'),
-    path('testimonial/', views.testimonial, name='error'),
+    path('Panchayath_List/', views.Panchayath_list, name='Panchayath_List'),
+    path('testimonial/', views.testimonial, name='testimonial'),
     path('job-detail/', views.job_detail, name='job-detail'),
     path('job-list/', views.job_list, name='job-list'),
 
