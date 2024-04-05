@@ -132,6 +132,10 @@ def contact_us(request):
     return render(request, 'index_contact.html')
 
 
+def wadakanchery(request):
+    return render(request, 'wadakanchery.html')
+
+
 def About(request):
     return render(request, 'about.html')
 
