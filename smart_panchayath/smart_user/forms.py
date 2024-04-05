@@ -1,5 +1,6 @@
 from django import forms
-from .models import User, Panchayath
+from django.contrib.auth.forms import ReadOnlyPasswordHashField
+from .models import User, Panchayath, Muncipality, Corporation
 
 
 class UserForm(forms.ModelForm):
@@ -17,7 +18,28 @@ class LoginForm(forms.ModelForm):
         }
 
 
-class P_loginForm(forms.ModelForm):
+class PanchayathLoginForm(forms.ModelForm):
     class Meta:
         model = Panchayath
-        fields = '__all__'
+        fields = ['p_id', 'password']
+        widgets = {
+            'password': forms.PasswordInput()
+        }
+
+
+class MuncipalityLoginForm(forms.ModelForm):
+    class Meta:
+        model = Muncipality
+        fields = ['m_id', 'password']
+        widgets = {
+            'password': forms.PasswordInput()
+        }
+
+
+class CorporationLoginForm(forms.ModelForm):
+    class Meta:
+        model = Corporation
+        fields = ['c_id', 'password']
+        widgets = {
+            'password': forms.PasswordInput()
+        }

@@ -1,9 +1,8 @@
-from django.shortcuts import render
-
-# Create your views here.
 from .models import Panchayath_details, Muncipality_details
 from django.shortcuts import render, redirect
-from . forms import UserForm, LoginForm, P_loginForm
+from django.contrib import messages
+from . forms import UserForm, LoginForm, PanchayathLoginForm, MuncipalityLoginForm, CorporationLoginForm
+from .models import User, Panchayath, Muncipality, Corporation
 
 
 def User_Registration(request):
@@ -27,59 +26,87 @@ def User_Login(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
-            # Implement your login logic here
-            # For demonstration purposes, let's just print the email and redirect to home
             email = form.cleaned_data['mail']
-            print("Login successful for email:", email)
-            # Redirect to home page after successful login
-            return redirect('Home')
+            password = form.cleaned_data['password']
+            try:
+                user = User.objects.get(mail=email, password=password)
+                return redirect('Home')
+            except User.DoesNotExist:
+                return render(request, 'user_login.html', {'form': form, 'error_message': 'Invalid credentials'})
     else:
         form = LoginForm()
     return render(request, 'user_login.html', {'form': form})
 
 
-def Panchayath_Login(request):
+def panchayath_login(request):
     if request.method == 'POST':
-        form = P_loginForm(request.POST)
+        form = PanchayathLoginForm(request.POST)
         if form.is_valid():
-            # Implement your login logic here
-            # For demonstration purposes, let's just print the email and redirect to home
-            id = form.cleaned_data['p_id']
-            print("Login successful for email:", id)
-            # Redirect to home page after successful login
-            return redirect('Home')
+            p_id = form.cleaned_data['p_id']
+            password = form.cleaned_data['password']
+            try:
+                panchayath_user = Panchayath.objects.get(p_id=p_id)
+                if panchayath_user.password == password:
+                    # Add logic for successful login
+                    messages.success(request, 'Login successful!')
+                    # Replace 'home' with your desired redirect URL
+                    return render(request, 'home.html')
+                else:
+                    messages.error(
+                        request, 'Invalid credentials. Please try again.')
+            except Panchayath.DoesNotExist:
+                messages.error(
+                    request, 'Invalid credentials. Please try again.')
     else:
-        form = P_loginForm()
+        form = PanchayathLoginForm()
     return render(request, 'panchayath_login.html', {'form': form})
 
 
-def Muncipality_Login(request):
+def muncipality_login(request):
     if request.method == 'POST':
-        form = P_loginForm(request.POST)
+        form = MuncipalityLoginForm(request.POST)
         if form.is_valid():
-            # Implement your login logic here
-            # For demonstration purposes, let's just print the email and redirect to home
-            id = form.cleaned_data['p_id']
-            print("Login successful for email:", id)
-            # Redirect to home page after successful login
-            return redirect('Home')
+            m_id = form.cleaned_data['m_id']
+            password = form.cleaned_data['password']
+            try:
+                muncipality_user = Muncipality.objects.get(m_id=m_id)
+                if muncipality_user.password == password:
+                    # Add logic for successful login
+                    messages.success(request, 'Login successful!')
+                    # Replace 'home' with your desired redirect URL
+                    return redirect('home')
+                else:
+                    messages.error(
+                        request, 'Invalid credentials. Please try again.')
+            except Muncipality.DoesNotExist:
+                messages.error(
+                    request, 'Invalid credentials. Please try again.')
     else:
-        form = P_loginForm()
+        form = MuncipalityLoginForm()
     return render(request, 'muncipality_login.html', {'form': form})
 
 
-def Corporation_Login(request):
+def corporation_login(request):
     if request.method == 'POST':
-        form = P_loginForm(request.POST)
+        form = CorporationLoginForm(request.POST)
         if form.is_valid():
-            # Implement your login logic here
-            # For demonstration purposes, let's just print the email and redirect to home
-            id = form.cleaned_data['p_id']
-            print("Login successful for email:", id)
-            # Redirect to home page after successful login
-            return redirect('Home')
+            c_id = form.cleaned_data['c_id']
+            password = form.cleaned_data['password']
+            try:
+                corporation_user = Corporation.objects.get(c_id=c_id)
+                if corporation_user.password == password:
+                    # Add logic for successful login
+                    messages.success(request, 'Login successful!')
+                    # Replace 'home' with your desired redirect URL
+                    return redirect('home')
+                else:
+                    messages.error(
+                        request, 'Invalid credentials. Please try again.')
+            except Corporation.DoesNotExist:
+                messages.error(
+                    request, 'Invalid credentials. Please try again.')
     else:
-        form = P_loginForm()
+        form = CorporationLoginForm()
     return render(request, 'corporation_login.html', {'form': form})
 
 
@@ -95,6 +122,14 @@ def Panchayath_list(request):
 def Muncipality_list(request):
     muncipality_details = Muncipality_details.objects.all()
     return render(request, 'muncipality_list.html', {'muncipality_details': muncipality_details})
+
+
+def about_us(request):
+    return render(request, 'index_about.html')
+
+
+def contact_us(request):
+    return render(request, 'index_contact.html')
 
 
 def About(request):
