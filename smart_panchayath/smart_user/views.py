@@ -136,6 +136,18 @@ def wadakanchery(request):
     return render(request, 'wadakanchery.html')
 
 
+def complaint(request):
+    return render(request, 'complaint.html')
+
+
+def wadakanchery_about(request):
+    return render(request, 'wadakanchery_about.html')
+
+
+def wadakanchery_contact(request):
+    return render(request, 'wadakanchery_contact.html')
+
+
 def About(request):
     return render(request, 'about.html')
 

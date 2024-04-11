@@ -1,110 +1,466 @@
-{% load static  %}
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <title>SmartPanchayath</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" media="all" href="{% static 'sites/wadakancherymunicipality.lsgkerala.gov.in/files/css/css_SqmKFjVhjSGJ1wHobnY6QsN2Lhe_cUvT3Pd3TAclvdo.css@pslfgv.css' %}" />
+    <link rel="stylesheet" media="all" href="{% static 'sites/wadakancherymunicipality.lsgkerala.gov.in/files/css/css_8IQQEDtYV-Zk9MUARP8VZw8oj8Ol693Q3iD-h0Qsm8o.css@pslfgv.css' %}" />
+    <link rel="shortcut icon" href="{% static 'themes/lsgdmunicipalitytwo/favicon.ico' %}" type="image/vnd.microsoft.icon" />
+    <link rel="alternate" type="application/rss+xml" title="" href="{% static 'ml/rss.xml' %}" />
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
 
-    <!-- Google Web Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
     
-    <!-- Icon Font Stylesheet -->
+    <!-- Font Awesome and Bootstrap Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <!-- External Libraries -->
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
 
-    <!-- Customized Bootstrap Stylesheet -->
+    <!-- Bootstrap CSS -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
 
-    <!-- Template Stylesheet -->
+    <!-- Custom Styles -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
     
-<style>
-    /* CSS for Slideshow */
-.slideshow-container {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-}
-
-.slide {
-    display: none;
-}
-
-.fade {
-    animation-name: fade;
-    animation-duration: 3s;
-}
-
-@keyframes fade {
-    from { opacity: 1; }
-    to { opacity: 1; }
-}
-
-</style>
+    <style>
+        /* CSS for Slideshow */
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .slide {
+            display: none;
+        }
+        .fade {
+            animation-name: fade;
+            animation-duration: 3s;
+        }
+        @keyframes fade {
+            from { opacity: 1; }
+            to { opacity: 1; }
+        }
+    </style>
 
 </head>
 
 <body>
-    <div class="container-xxl bg-white p-0">
-      
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="/wadakanchery/" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
+            <img src="{% static 'img/Wadakanchery-Municipality-logo-en.png' %}" alt="Wadakanchery Municipality" class="img-fluid">
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="/Muncipality_List/" class="nav-item nav-link"><i class="fas fa-home"></i> </a>
+                <a href="/wadakanchery/" class="nav-item nav-link active">Home</a>
+                <a href="/wadakanchery_about/" class="nav-item nav-link">About</a>
+                <a href="/complaint/" class="nav-item nav-link">Public Grievance Cell</a>
+                <a href="/wadakanchery_contact/" class="nav-item nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
 
-
-        <!-- Navbar Start -->
-        <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-    <a href="/wadakanchery/" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
-        <!-- Replace the text with an image -->
-        <img src="{% static 'img/Wadakanchery-Municipality-logo-en.png' %}" alt="Wadakanchery Municipality" class="img-fluid">
-    </a>
-    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav ms-auto p-4 p-lg-0">
-            <a href="/index/" class="nav-item nav-link">Home</a>
-            <a href="/about_us/" class="nav-item nav-link active">About</a>
-            <a href="/contact_us/" class="nav-item nav-link">Contact</a>
+    <!-- Slideshow Section -->
+    <div class="slideshow-container">
+        <div class="slide fade">
+            <img src="{% static 'img/Banner1.jpg' %}" class="w-100" alt="Image 1">
+        </div>
+        <div class="slide fade">
+            <img src="{% static 'img/Banner2.jpg' %}" class="w-100" alt="Image 2">
         </div>
     </div>
-</nav>
+    <!-- Slideshow Section End -->
+      
+    <br>
 
-        <!-- Navbar End -->
-
-
-        <!-- Header Start -->
-
-    <!-- New Image Slide Section with Animation -->
-<div class="slideshow-container">
-    <div class="slide fade">
-        <img src="{% static 'img/Banner1.jpg' %}" class="w-100" alt="Image 1">
+        <section id="lsgdetails" class="lsgdetails">
+	   <div class="container">
+        <div class="row">
+          <div class="lsgblocks_thirdone lsgblocks_thirdone col-lg-5 col-md-5 col-sm-12 col-xs-12 ">
+              <div class="region region-panel-secondone-5">
+    <div class="views-element-container block block-views block-views-blocknews-block-1" id="block-lsgdmunicipalitytwo-views-block-news-block-1-2">
+  
+    
+      <div><div>
+      <div class="view-header">
+      <h2>NEWS</h2>
     </div>
-    <div class="slide fade">
-        <img src="{% static 'img/Banner2.jpg' %}" class="w-100" alt="Image 2">
-    </div>
+      
+      <div class="view-content">
+      <div class="item-list">
+  
+  <ul>
+<br><br>
+          <li><div class="views-field views-field-title"><span class="field-content"><h3>Vadakancherry Municipality - Final Voter List 2023</h3></span></div></li>
+          <li><div class="views-field views-field-title"><span class="field-content"><h3>Vadakanchery Municipal Corporation - Vadakanchery Town Master Plan</h3></span></div></li>
+          <li><div class="views-field views-field-title"><span class="field-content"><h3>Kerala Solid Waste Management Project</h3></span></div></li>
+    
+  </ul>
+
 </div>
 
-<!-- Header End -->
+    </div>
+  
+
+      </div>
+</div>
+
+  </div>
+
+  </div>
+
+          </div>
+          <div class="lsgblocks_panelone lsgblocks_panelone col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+              <div class="region region-panel-secondone-6">
+    <nav role="navigation" aria-labelledby="block-lsgdmunicipalitytwo-specialprogrammes-menu" id="block-lsgdmunicipalitytwo-specialprogrammes" class="block block-menu navigation menu--special-programmes-">
+            
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+         <h3>Special Programmes</h3>
+              </li><br>
+              <li class="menu-item">
+         <h5>Digital Municipality</h5>
+              </li>
+                <li class="menu-item">
+        <h5>Project information</h5>
+              </li>
+                <li class="menu-item">
+        <h5>Financial Statements</h5>
+              </li>
+                <li class="menu-item">
+        <h5>Kerala Solid Waste Management Project</h5>
+              </li>
+        </ul>
+  
 
 
+  </nav>
 
-       
+  </div>
+
+          </div>
+ <div class="lsgblocks_panelone lsgblocks_panelone col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
+              <div class="region region-panel-second-7">
+    <div class="views-element-container block block-views block-views-blockwho-is-who-block-1" id="block-views-block-who-is-who-block-1">
+  
+    
+      <div><div>
+      
+      <div class="view-content">
+          <div class="views-row"><div class="views-field views-field-body"><div class="field-content"><div style="align: center"> 
+<table id="table-e1" style="width: 268px;"><tbody><tr><td class="text-align-center" height="80px" style="width: 120px;"><img alt="P N Surendran" data-entity-type="file" data-entity-uuid="327aa62d-8d62-4870-be4b-e368bcc1c6f5" height="95" src="{% static 'sites/wadakancherymunicipality.lsgkerala.gov.in/files/inline-images/photo1_0.jpg' %}" width="70" /></td>
+			<td style="width: 2px; background: none 0% 0% repeat scroll rgb(255, 255, 255);"> </td>
+			<td class="text-align-center" style="width: 80px;"><img alt="Sheela Mohan" data-entity-type="file" data-entity-uuid="4619c2c4-b6f5-4224-b0c9-d044b5b3cd13" height="92" src="{% static 'sites/wadakancherymunicipality.lsgkerala.gov.in/files/inline-images/photo2_0.jpg' %}" width="74" /></td>
+		</tr><tr><td class="text-align-center" style="width: 120px;"><strong>ChairMan</strong></td>
+			<td class="text-align-center" style="width: 2px; background: rgb(255, 255, 255);"> </td>
+			<td class="text-align-center" style="width: 175px; "><strong>Vice Chairperson</strong></td>
+		</tr><tr><td class="text-align-center" style="width: 120px;"><h5>P N Surendran</h5></td>
+			<td class="text-align-center" style="width: 2px; background: rgb(255, 255, 255);"> </td>
+			<td class="text-align-center" style="width: 175px; "><h5>Sheela Mohan</h5></td>
+		</tr></tbody></table></div>
+</div></div></div>
+
+    </div>
+  
+          </div>
+</div>
+
+  </div>
+
+  </div>
+
+          </div>
+                   
+        </div>
+      </div>
+    </section>
+    
+      <section id="lsgdetailsone" class="lsgdetailsone">
+	   <div class="container">
+        <div class="row">
+          <div class="lsgblocks_thirdtwo lsgblocks_thirdtwo col-lg-8 col-md-8 col-sm-12 col-xs-12 ">
+              <div class="region region-panel-secondone-7">
+    <div id="block-lsgdmunicipalitytwo-onlineservicesml" class="block block-block-content block-block-content4450eb43-df48-4355-aa2a-a9e20cd48913">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+
+<!--/*--><![CDATA[/* ><!--*/
+#table1 {
+	border-radius:15px;
+   	width: 224px;
+    float: left; 
+    vertical-align:top   
+ }
+#a1 {
+    color: #fff;	
+}
+#a1:visited {
+    color: #fff;
+}
+#a1:hover {
+   	color: #d3d4d4;
+	}
+#table2 {   
+    background: none;
+	width: 20px;
+	float: left
+}
+
+/*--><!]]]]><![CDATA[>*/
+
+/*--><!]]>*/
+</style><p> </p>
+
+<div style="align: center">
+<table id="table1" style="background: #600416"><tbody><tr><td height="45px">
+			<h6><strong><font color="white"><h4><img alt="plan" data-entity-type="file" data-entity-uuid="f5aed4eb-d392-4fe3-b4c3-55c6f06bd8d8" src="{% static 'sites/wadakancherymunicipality.lsgkerala.gov.in/files/inline-images/plan-icon-20.png' %}" /> <span style="color: white;">Annual plans</span></h4></font></strong></h6>
+</td></tr>
+            <tr bgcolor="#57bc90"><td> </td></tr></tbody></table>
+        <table id="table2"><tbody><tr><td> </td>
+		</tr></tbody></table><table id="table1" style="background: #57396e"><tbody><tr><td height="45px">
+			<h6><strong><font color="white"><h4><img alt="plan" data-entity-type="file" data-entity-uuid="f5aed4eb-d392-4fe3-b4c3-55c6f06bd8d8" src="{% static 'sites/wadakancherymunicipality.lsgkerala.gov.in/files/inline-images/plan-icon-20.png' %}" /> <span style="color: white;">Civil Registrations</span></h4></font></strong></h6>
+</td>
+		</tr><tr bgcolor="#57bc90"><td> </td>
+		</tr></tbody></table><table id="table2"><tbody><tr><td> </td>
+		</tr></tbody></table><table id="table1" style="background: #990066"><tbody><tr><td height="45px">
+			<h6><strong><font color="white"><h4><img alt="plan" data-entity-type="file" data-entity-uuid="f5aed4eb-d392-4fe3-b4c3-55c6f06bd8d8" src="{% static 'sites/wadakancherymunicipality.lsgkerala.gov.in/files/inline-images/plan-icon-20.png' %}" /> <span style="color: white;">Welfare Pension</span></h4></font></strong></h6>
+</td>
+		</tr><tr bgcolor="#57bc90"><td> </td>
+		</tr></tbody></table><table id="table2"><tbody><tr><td> </td>
+		</tr></tbody></table>
+
+<table id="table1" style="background: #769307"><tbody><tr><td height="45px">
+			<h6><strong><font color="white"><h4><img alt="plan" data-entity-type="file" data-entity-uuid="f5aed4eb-d392-4fe3-b4c3-55c6f06bd8d8" src="{% static 'sites/wadakancherymunicipality.lsgkerala.gov.in/files/inline-images/plan-icon-20.png' %}" /> <span style="color: white;">PF Information</span></h4></font></strong></h6>
+</td>
+		</tr><tr bgcolor="#57bc90"><td> </td>
+		</tr></tbody></table><table id="table2"><tbody><tr><td> </td>
+		</tr></tbody></table><table id="table1" style="background: #a07104"><tbody><tr><td height="45px">
+			<h6><strong><font color="white"><h4><img alt="plan" data-entity-type="file" data-entity-uuid="f5aed4eb-d392-4fe3-b4c3-55c6f06bd8d8" src="{% static 'sites/wadakancherymunicipality.lsgkerala.gov.in/files/inline-images/plan-icon-20.png' %}" /> <span style="color: white;">File Search</span></h4></font></strong></h6>
+</td>
+		</tr><tr bgcolor="#57bc90"><td> </td>
+		</tr></tbody></table><table id="table2"><tbody><tr><td> </td>
+		</tr></tbody></table><table id="table1" style="background: #ab4323"><tbody><tr><td height="45px">
+			<h6><strong><font color="white"><h4><img alt="plan" data-entity-type="file" data-entity-uuid="f5aed4eb-d392-4fe3-b4c3-55c6f06bd8d8" src="{% static 'sites/wadakancherymunicipality.lsgkerala.gov.in/files/inline-images/plan-icon-20.png' %}" /> <span style="color: white;">Building Permit</span></h4></font></strong></h6>
+</td>
+		</tr><tr bgcolor="#57bc90"><td> </td>
+		</tr></tbody></table><table id="table2"><tbody><tr><td> </td>
+		</tr></tbody></table>
+ 
+        <br>
+        <table id="table1" style="background: #024080"><tbody><tr><td height="45px">
+			<h6><strong><font color="white"><h4><img alt="plan" data-entity-type="file" data-entity-uuid="f5aed4eb-d392-4fe3-b4c3-55c6f06bd8d8" src="{% static 'sites/wadakancherymunicipality.lsgkerala.gov.in/files/inline-images/plan-icon-20.png' %}" /> <span style="color: white;">Property Tax</span></h4></font></strong></h6>
+</td>
+		</tr><tr bgcolor="#57bc90"><td> </td>
+		</tr></tbody></table><table id="table2"><tbody><tr><td> </td>
+		</tr></tbody></table><table id="table1" style="background: #5b0280"><tbody><tr><td height="45px">
+			<h6><strong><font color="white"><h4><img alt="plan" data-entity-type="file" data-entity-uuid="f5aed4eb-d392-4fe3-b4c3-55c6f06bd8d8" src="{% static 'sites/wadakancherymunicipality.lsgkerala.gov.in/files/inline-images/plan-icon-20.png' %}" /> <span style="color: white;">Orders</span></h4></font></strong></h6>
+</td>
+		</tr><tr bgcolor="#57bc90"><td> </td>
+		</tr></tbody></table><table id="table2"><tbody><tr><td> </td>
+		</tr></tbody></table><table id="table1" style="background: #807302"><tbody><tr><td height="45px">
+			<h6><strong><font color="white"><h4><img alt="plan" data-entity-type="file" data-entity-uuid="f5aed4eb-d392-4fe3-b4c3-55c6f06bd8d8" src="{% static 'sites/wadakancherymunicipality.lsgkerala.gov.in/files/inline-images/plan-icon-20.png' %}" /> <span style="color: white;">Yoga Resolutions</span></h4></font></strong></h6>
+</td>
+		</tr><tr bgcolor="#57bc90"><td> </td>
+		</tr></tbody></table><table id="table2"><tbody><tr><td> </td>
+		</tr></tbody></table>
+ 
+
+<table id="table1" style="background: #80021d"><tbody><tr><td height="45px">
+			<h6><strong><font color="white"><h4><img alt="plan" data-entity-type="file" data-entity-uuid="f5aed4eb-d392-4fe3-b4c3-55c6f06bd8d8" src="{% static 'sites/wadakancherymunicipality.lsgkerala.gov.in/files/inline-images/plan-icon-20.png' %}" /> <span style="color: white;">e-Services</span></h4></font></strong></h6>
+</td>
+		</tr><tr bgcolor="#57bc90"><td> </td>
+		</tr></tbody></table><table id="table2"><tbody><tr><td> </td>
+		</tr></tbody></table><table id="table1" style="background: #945906"><tbody><tr><td height="45px">
+			<h6><strong><font color="white"><h4><img alt="plan" data-entity-type="file" data-entity-uuid="f5aed4eb-d392-4fe3-b4c3-55c6f06bd8d8" src="{% static 'sites/wadakancherymunicipality.lsgkerala.gov.in/files/inline-images/plan-icon-20.png' %}" /> <span style="color: white;">Tenders</span></h4></font></strong></h6>
+</td>
+		</tr><tr bgcolor="#57bc90"><td> </td>
+		</tr></tbody></table><table id="table2"><tbody><tr><td> </td>
+		</tr></tbody></table><table id="table1" style="background: #066394"><tbody><tr><td height="45px">
+			<h6><strong><font color="white"><h4><img alt="plan" data-entity-type="file" data-entity-uuid="f5aed4eb-d392-4fe3-b4c3-55c6f06bd8d8" src="{% static 'sites/wadakancherymunicipality.lsgkerala.gov.in/files/inline-images/plan-icon-20.png' %}" /> <span style="color: white;">Application Form</span></h4></font></strong></h6>
+</td>
+		</tr><tr bgcolor="#57bc90"><td> </td>
+		</tr></tbody></table>
+ </div>
+
+<p> </p>
+</div>
+      
+  </div>
+
+  </div>
+
+          </div>
+          <div class="lsgblocks_paneltwo lsgblocks_paneltwo col-lg-4 col-md-4 col-sm-12 col-xs-12 ">
+              <div class="region region-panel-secondone-8">
+    <div id="block-lsgdmunicipalitytwo-oraranaeatatatataila-2" class="block block-block-content block-block-contentc4a81f5a-abfd-48ab-b471-ca2f2feb93bb">
+  
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><table border="0" style="width: 486px;"><tbody><tr><td width="50"><img alt="Dist" data-entity-type="file" data-entity-uuid="26f49188-1c67-459e-94c4-d356f487e7b6" src="{% static 'sites/wadakancherymunicipality.lsgkerala.gov.in/files/inline-images/District-BT.png' %}" class="align-center" /></td>
+			<td style="width: 1px;" width="10"> </td>
+			<td width="141"><h5>District</td></h5>
+			<td style="width: 1px;" width="1"> </td>
+			<td style="width: 236px;"><h5>Thrissur</td></h5>
+		</tr><tr><td width="50"><img alt="icon" data-entity-type="file" data-entity-uuid="64c5b9ca-07ee-42fd-80f5-ee9a9d3c998a" src="{% static 'sites/wadakancherymunicipality.lsgkerala.gov.in/files/inline-images/Taluk-BT.png' %}" class="align-center" /></td>
+			<td style="width: 1px;"> </td>
+			<td style="width: 138px;"><h5>Thaluk</td></h5>
+			<td style="width: 1px;"> </td>
+			<td style="width: 1px;"><span style="width: 236px;"><h5>Thalapilly</td></h5>
+		</tr><tr><td width="50"><img alt="icon" data-entity-type="file" data-entity-uuid="a9dcadff-42ca-4a31-9b0f-b99bf45d40e0" src="{% static 'sites/wadakancherymunicipality.lsgkerala.gov.in/files/inline-images/Village.png' %}" class="align-center" /></td>
+			<td style="width: 1px;"> </td>
+			<td style="width: 138px;"><h5>Village</td></h5>
+			<td style="width: 1px;"> </td>
+			<td style="width: 236px;"><h5>10</td></h5>
+		</tr><tr><td width="50"><img alt="Area" data-entity-type="file" data-entity-uuid="ef521847-2101-4b4f-bde9-16a08c1c015d" src="{% static 'sites/wadakancherymunicipality.lsgkerala.gov.in/files/inline-images/Area-BT.png' %}" class="align-center" /></td>
+			<td style="width: 1px;"> </td>
+			<td style="width: 138px;"><h5>Area</td></h5>
+			<td style="width: 1px;"> </td>
+			<td style="width: 236px;"><h5>51.56 Sq.Km</td></h5>
+		</tr><tr><td width="50"><img alt="icon" data-entity-type="file" data-entity-uuid="b5d64de2-43ea-498a-bfec-c6ed64fb681a" src="{% static 'sites/wadakancherymunicipality.lsgkerala.gov.in/files/inline-images/Wards-BT.png' %}" class="align-center" /></td>
+			<td style="width: 1px;"> </td>
+			<td style="width: 138px;"><h5>Wards</td></h5>
+			<td style="width: 1px;"> </td>
+			<td style="width: 236px;"><h5>41</td></h5>
+		</tr><tr><td width="50"><img alt="icon" data-entity-type="file" data-entity-uuid="e673d6a9-550c-4edb-bb00-5f9f0a6c5197" src="{% static 'sites/wadakancherymunicipality.lsgkerala.gov.in/files/inline-images/Population-BT.png' %}" class="align-center" /></td>
+			<td style="width: 1px;"> </td>
+			<td style="width: 138px;"><h5>Population</td></h5>
+			<td style="width: 1px;"> </td>
+			<td style="width: 236px;"><h5>61,341</td></h5>
+		</tr></tbody></table></div>
+      
+  </div>
+
+  </div>
+
+          </div>
+                   
+        </div>
+      </div>
+    </section>
+      
+     
+     
+ 
+  
+    
+       <section id="lsgdetailsblocknew" class="lsgdetailsblocknew">
+      <div class="container">
+        <div class="row">
+          <div class="lsgblocksnew_one lsgblocksnew_one  col-lg-3 col-md-3 col-sm-12 col-xs-12">
+              <div class="region region-panel-second-12">
+    <div class="views-element-container block block-views block-views-blockvaijayagaathakala-block-1" id="block-lsgdmunicipalitytwo-views-block-vaijayagaathakala-block-1">
+  
+      <h2>Success Stories</h2>
+    
+      <div><div>
+      
+  
+          </div>
+</div>
+
+  </div>
+
+  </div>
+
+          </div>
+          <div class="lsgblocksnew_two lsgblocksnew_two  col-lg-3 col-md-3 col-sm-12 col-xs-12">
+              <div class="region region-panel-second-13">
+    <nav role="navigation" aria-labelledby="block-lsgdmunicipalitytwo-publicdisclosure-menu" id="block-lsgdmunicipalitytwo-publicdisclosure" class="block block-menu navigation menu--janasamakasam">
+      
+  <h2 id="block-lsgdmunicipalitytwo-publicdisclosure-menu">Public</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item">
+        <h4>Goverment Orders</h4>
+              </li>
+                <li class="menu-item">
+        <h4>People's Representative</h4>
+              </li>
+                <li class="menu-item">
+        <h4>Tenders</h4>
+              </li>
+                <li class="menu-item">
+        <h4>Reports</h4>
+              </li>
+                <li class="menu-item">
+        <h4>Calender</h4>
+              </li>
+        </ul>
+  
 
 
-        <!-- Footer Start -->
+  </nav>
+
+  </div>
+
+          </div>
+          <div class="lsgblocksnew_three lsgblocksnew_three  col-lg-3 col-md-3 col-sm-12 col-xs-12">
+              <div class="region region-panel-second-14">
+    <div id="block-lsgdmunicipalitytwo-vaebasaairaraukala" class="block block-block-content block-block-contenta4c0d764-0770-4892-a4c8-97c5d4d48573">
+  
+      <h2>Websites</h2>
+    
+      
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><ul><li><h4>Goverment of India</h4></li>
+	<li><h4>Kerala Govt</h4></li>
+	<li><h4>Department of Local Self-Government</h4></li>
+	<li><h4>Information Kerala Mission</h4></li>
+	<li><h4>Planning Board</h4></li>
+</ul></div>
+      
+  </div>
+
+  </div>
+
+          </div>       
+		  <div class="lsgblocksnew_four lsgblocksnew_four  col-lg-3 col-md-3 col-sm-12 col-xs-12">
+              <div class="region region-panel-second-15">
+    <div id="block-lsgdmunicipalitytwo-map" class="block block-block-content block-block-content5e66c0a1-7961-4dd8-880a-7e6b0b8305d4">
+  
+    
+      
+            <div class="field field--name-field-map field--type-string field--label-hidden field__item">  <iframe width="300" height="200" frameborder="0" style="border:0" src="https://maps.google.com/maps?hl=en&amp;q=wadakanchery+municipality&amp;t=m&amp;z=14&amp;output=embed"></iframe>
+  <p class="simple-gmap-link"><a href="https://maps.google.com/maps?q=wadakanchery+municipality&amp;hl=en&amp;t=m&amp;z=14" target="_blank">View larger map</a></p>
+</div>
+      
+  </div>
+
+  </div>
+
+          </div>       
+        </div>
+      </div>
+    </section>
+    
+    
+            <!-- Footer Start -->
         <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
             <div class="container py-5">
                 <div class="row g-5">
@@ -167,12 +523,22 @@
                 </div>
             </div>
         </div>
-        <!-- Footer End -->
+        <!-- Footer End -->   
+  
+         
+</div>
 
+  </div>
+
+    
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"ml\/","currentPath":"node","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"ml"},"pluralDelimiter":"\u0003","ajaxPageState":{"libraries":"blazy\/loading,calendar\/calendar.theme,classy\/base,classy\/messages,core\/html5shiv,core\/normalize,extlink\/drupal.extlink,fontawesome\/fontawesome.svg.shim,lsgdmunicipalitytwo\/global-styling,lsgdmunicipalitytwo\/skins-menu,slick\/slick.load,system\/base,views\/views.module,views_slideshow\/jquery_hoverIntent,views_slideshow\/widget_info,views_slideshow_cycle\/jquery_cycle,views_slideshow_cycle\/json2,views_slideshow_cycle\/views_slideshow_cycle","theme":"lsgdmunicipalitytwo","theme_token":null},"ajaxTrustedUrl":{"\/ml\/search\/node":true},"data":{"extlink":{"extTarget":true,"extClass":"0","extLabel":"","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":"","extAlert":false,"extAlertText":"","mailtoClass":"0","mailtoLabel":""}},"viewsSlideshowCycle":{"#views_slideshow_cycle_main_flash_news-block_1":{"num_divs":5,"id_prefix":"#views_slideshow_cycle_main_","div_prefix":"#views_slideshow_cycle_div_","vss_id":"flash_news-block_1","effect":"scrollHorz","transition_advanced":0,"timeout":5000,"speed":700,"delay":0,"sync":1,"random":0,"pause":1,"pause_on_click":0,"action_advanced":0,"start_paused":0,"remember_slide":0,"remember_slide_days":1,"pause_in_middle":0,"pause_when_hidden":0,"pause_when_hidden_type":"full","amount_allowed_visible":"","nowrap":0,"fixed_height":1,"items_per_slide":1,"wait_for_image_load":1,"wait_for_image_load_timeout":3000,"cleartype":0,"cleartypenobg":0,"advanced_options":"{}"}},"viewsSlideshow":{"flash_news-block_1":{"methods":{"goToSlide":["viewsSlideshowSlideCounter","viewsSlideshowPager","viewsSlideshowCycle"],"nextSlide":["viewsSlideshowSlideCounter","viewsSlideshowPager","viewsSlideshowCycle"],"pause":["viewsSlideshowControls","viewsSlideshowCycle"],"play":["viewsSlideshowControls","viewsSlideshowCycle"],"previousSlide":["viewsSlideshowSlideCounter","viewsSlideshowPager","viewsSlideshowCycle"],"transitionBegin":["viewsSlideshowSlideCounter","viewsSlideshowPager"],"transitionEnd":[]},"paused":0}},"slick":{"accessibility":true,"adaptiveHeight":false,"autoplay":false,"autoplaySpeed":3000,"pauseOnHover":true,"pauseOnDotsHover":false,"arrows":true,"downArrow":false,"downArrowTarget":"","downArrowOffset":0,"centerMode":false,"centerPadding":"50px","dots":false,"dotsClass":"slick-dots","draggable":true,"fade":false,"focusOnSelect":false,"infinite":true,"initialSlide":0,"lazyLoad":"ondemand","mouseWheel":false,"randomize":false,"rtl":false,"rows":1,"slidesPerRow":1,"slide":"","slidesToShow":1,"slidesToScroll":1,"speed":500,"swipe":true,"swipeToSlide":false,"edgeFriction":0.35,"touchMove":true,"touchThreshold":5,"useCSS":true,"cssEase":"ease","cssEaseBezier":"","cssEaseOverride":"","useTransform":true,"easing":"linear","variableWidth":false,"vertical":false,"verticalSwiping":false,"waitForAnimate":true},"user":{"uid":0,"permissionsHash":"4d81510bf78486f14e611823457acfc158ee6a6c382a7a140a1bb95faf0169ba"}}</script>
+<script src="{% static 'sites/wadakancherymunicipality.lsgkerala.gov.in/files/js/js_c6sBYcgPYd3dKKsqe7iP6GIHZvyCj-q66Ny81NMgZ7U.js' %}"></script>
+<script src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
+<script src="https://use.fontawesome.com/releases/v5.0.13/js/v4-shims.js"></script>
+<script src="{% static '' %}"></script>
 
         <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-    </div>
+        
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -203,4 +569,4 @@
     <script src="js/main.js"></script>
 </body>
 
-</html>
+</html> 

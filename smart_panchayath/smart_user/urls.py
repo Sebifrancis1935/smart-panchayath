@@ -24,6 +24,11 @@ urlpatterns = [
     path('about_us/', views.about_us, name='about_us'),
     path('contact_us/', views.contact_us, name='contact_us'),
     path('wadakanchery/', views.wadakanchery, name='wadakanchery'),
+    path('complaint/', views.complaint, name='complaint'),
+    path('wadakanchery_contact/', views.wadakanchery_contact,
+         name='wadakanchery_contact'),
+    path('wadakanchery_about/', views.wadakanchery_about,
+         name='wadakanchery_about'),
 
 
 ]
