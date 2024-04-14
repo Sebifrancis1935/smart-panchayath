@@ -8,7 +8,7 @@ class User(models.Model):
     address = models.CharField(max_length=100)
     Adhar = models.IntegerField()
     pin_code = models.IntegerField()
-    phone_no = models.IntegerField(max_length=15)
+    phone_no = models.IntegerField()
     mail = models.EmailField()
     password = models.CharField(max_length=100)
 
